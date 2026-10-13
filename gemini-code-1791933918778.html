@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOLZPLATZgermany // BOLZwear Shop & Music</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #080808;
+            --panel-bg: #111111;
+            --border-color: #222222;
+            --text-color: #e0e0e0;
+            --text-muted: #777777;
+            --accent-red: #d32f2f;
+            --accent-silver: #a5a5a5;
+            --font-mono: 'Chakra Petch', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(8, 8, 8, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .brand-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-logo {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .brand-logo span {
+            color: var(--accent-red);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 8rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-banner {
+            width: 100%;
+            max-width: 750px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 0 20px rgba(211, 47, 47, 0.15);
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-tag {
+            font-family: var(--font-mono);
+            color: var(--accent-red);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-mono);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--text-color);
+            color: var(--bg-color);
+            border: 1px solid var(--text-color);
+            font-weight: 700;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--text-color);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-color);
+        }
+
+        /* Main Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-family: var(--font-mono);
+            margin-top: 0.5rem;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-family: var(--font-mono);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Shop Product Card Customization */
+        .shop-card {
+            background: #0d0d0d;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.3s ease;
+        }
+
+        .shop-card:hover {
+            border-color: var(--accent-red);
+        }
+
+        .shop-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .shop-card-content {
+            padding: 1.5rem;
+        }
+
+        .product-code {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-silver);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-specs {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 1rem 0;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .product-specs li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Video Embed Aspect Ratio */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Streaming Containers */
+        .stream-container {
+            margin-top: 1.5rem;
+            border: 1px solid var(--border-color);
+            background: #000;
+        }
+
+        /* Showcase / Gallery */
+        .showcase-img-box {
+            width: 100%;
+            border: 1px solid var(--border-color);
+            background: var(--panel-bg);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .showcase-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .showcase-img-box:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            nav a {
+                margin-left: 0;
+                margin-right: 1.5rem;
+            }
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="brand-logo-container">
+            <img src="IMG-20191222-WA0166.jpg" alt="BOLZPLATZ RECORDS" class="brand-logo-img">
+            <div class="brand-logo">BOLZPLATZ<span>germany</span></div>
+        </div>
+        <nav>
+            <a href="#music">Streaming</a>
+            <a href="#media">YouTube</a>
+            <a href="#shop">BOLZwear Shop</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-banner">
+            <img src="1000037286_3.png" alt="BOLZwear Story Header Banner">
+        </div>
+        
+        <div class="hero-tag">// Sound & Apparel Subculture</div>
+        <h1>ROH. DIREKT. ECHT.</h1>
+        <p>Finest Techno, Deepest Drum & Bass produziert von Mario Schirra. Kombiniert mit spartanischer, minimaler Techno-Gothic Mode von Designer Nicola Valela.</p>
+        <div class="cta-group">
+            <a href="#shop" class="btn btn-primary">Kollektion / Shop</a>
+            <a href="#music" class="btn btn-outline">Music Streams</a>
+        </div>
+    </main>
+
+    <!-- BOLZwear Shop & Katalog Section -->
+    <section id="shop">
+        <div class="section-header">
+            <h2>// BOLZwear KATALOG & SHOP</h2>
+            <p>Gothic-Techno Clubwear & Tactical Apparel</p>
+        </div>
+
+        <div class="showcase-img-box">
+            <img src="1000034340.png" alt="BOLZwear Bummer Collection Overview">
+        </div>
+
+        <div class="grid-3" style="margin-top: 3rem;">
+            
+            <!-- Produkt 1: Men's Fitted Top -->
+            <div class="shop-card">
+                <div>
+                    <img src="Technische Details des Männer-Tops_2.png" alt="Men's Fitted Top Specs">
+                    <div class="shop-card-content">
+                        <div class="product-code">// ARTICLE: M-TOP-TG01</div>
+                        <h3>Men's Fitted Top</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">Gothic Techno Clubwear mit Mesh-Schulterpanels, Contour-Nähten und 4-Way-Stretch.</p>
+                        <ul class="product-specs">
+                            <li><strong>Material:</strong> 92% Polyester, 8% Elastan</li>
+                            <li><strong>Grammatur:</strong> 200 GSM High-Stretch</li>
+                            <li><strong>Fit:</strong> Body-Hugging / Muscle Fit</li>
+                            <li><strong>Größen:</strong> S | M | L | XL | XXL</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+                    <a href="mailto:mario.schirra@proton.me?subject=Anfrage: Men's Fitted Top (M-TOP-TG01)" class="btn btn-primary" style="width: 100%; font-size: 0.75rem;">Produkt Anfragen</a>
+                </div>
+            </div>
+
+            <!-- Produkt 2: Techno Gothic Ladies Dress -->
+            <div class="shop-card">
+                <div>
+                    <img src="Techno-gothic Damenkleid Katalog_2.png" alt="Techno Gothic Ladies Dress Specs">
+                    <div class="shop-card-content">
+                        <div class="product-code">// ARTICLE: TG-23-LXX</div>
+                        <h3>Techno Gothic Ladies Dress</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">Figurbetontes Kleid mit spartanischem Frontprint, Print auf den Ärmeln und gewebtem Patch am Saum.</p>
+                        <ul class="product-specs">
+                            <li><strong>Material:</strong> 95% Baumwolle, 5% Elasthan</li>
+                            <li><strong>Fit:</strong> Figur-Akzentuiert / Slim Fit</li>
+                            <li><strong>Details:</strong> Atmungsaktiv, Elastisch</li>
+                            <li><strong>Größen:</strong> XS | S | M | L | XL</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+                    <a href="mailto:mario.schirra@proton.me?subject=Anfrage: Ladies Dress (TG-23-LXX)" class="btn btn-primary" style="width: 100%; font-size: 0.75rem;">Produkt Anfragen</a>
+                </div>
+            </div>
+
+            <!-- Produkt 3: Ladies Dress (Bolzwear Red Signature) -->
+            <div class="shop-card">
+                <div>
+                    <img src="Bolzwear Damen Kleid Produktübersicht.png" alt="Bolzwear Ladies Dress Red Signature">
+                    <div class="shop-card-content">
+                        <div class="product-code">// ARTICLE: BW-23-LXX</div>
+                        <h3>BOLZwear Ladies Dress</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">Roter Signature BOLZwear-Frontprint auf tiefschwarzem Stretch-Material. Entwickelt für die Clubnacht.</p>
+                        <ul class="product-specs">
+                            <li><strong>Material:</strong> 95% Baumwolle, 5% Elasthan</li>
+                            <li><strong>Design:</strong> Bold Red Lettering Print</li>
+                            <li><strong>Care:</strong> 30°C Schonwaschgang</li>
+                            <li><strong>Größen:</strong> XS | S | M | L | XL</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+                    <a href="mailto:mario.schirra@proton.me?subject=Anfrage: Ladies Dress (BW-23-LXX)" class="btn btn-primary" style="width: 100%; font-size: 0.75rem;">Produkt Anfragen</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="showcase-img-box" style="margin-top: 4rem;">
+            <img src="Gothic Techno Streetwear Kollektion (1).png" alt="BOLZwear Complete Lineup">
+        </div>
+    </section>
+
+    <!-- Music & Streaming Section (Mixcloud & Hearthis) -->
+    <section id="music">
+        <div class="section-header">
+            <h2>// SOUND ARCHITECTURE & STREAMING</h2>
+            <p>Mario Schirra — Mixcloud & Hearthis Sets</p>
+        </div>
+        <div class="grid-2">
+            <!-- Mixcloud Player Card -->
+            <div class="card">
+                <div>
+                    <div class="card-tag">MIXCLOUD SETS</div>
+                    <h3>Mario Schirra on Mixcloud</h3>
+                    <p>Höre dir die neuesten Techno- und Drum n Bass-Mixe direkt über das integrierte Mixcloud-Widget an.</p>
+                </div>
+                
+                <div class="stream-container">
+                    <iframe width="100%" height="400" src="https://player-widget.mixcloud.com/widget/iframe/?feed=%2Fmarioschirra9%2F&utm_medium=share&utm_source=embed&utm_content=profile&utm_term=NzAyMDYzMTJfN2NiNF80OGMyXzk4ZDBfZjVjYzllOTBkY2Vl" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;"></iframe>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://www.mixcloud.com/marioschirra9/" target="_blank" class="btn btn-outline" style="width: 100%;">Mixcloud Profil öffnen</a>
+                </div>
+            </div>
+
+            <!-- Hearthis Player Card -->
+            <div class="card">
+                <div>
+                    <div class="card-tag">HEARTHIS STREAMS</div>
+                    <h3>Mario Schirra on Hearthis</h3>
+                    <p>Offizieller Hearthis-Player mit Deep Techno & Underground Beats.</p>
+                </div>
+                
+                <div class="stream-container">
+                    <iframe style="border-radius: 10px;" scrolling="no" id="hearthis_at_user_mario-schirra" width="100%" height="350" src="https://app.hearthis.at/mario-schirra/embed/?hcolor=ba1010&css=&skin=light" frameborder="0" allowtransparency></iframe>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://hearthis.at/mario-schirra/" target="_blank" class="btn btn-primary" style="width: 100%;">Hearthis Profil öffnen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube / Live Casts Section -->
+    <section id="media">
+        <div class="section-header">
+            <h2>// YOUTUBE VIDEOS & LIVE CASTS</h2>
+            <p>Visuals, Sets & Underground Atmosphere</p>
+        </div>
+        <div class="grid-3">
+            <!-- Neu integriertes Video -->
+            <div class="card" style="padding: 1.5rem;">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/BHvLqOFx-3o" title="BOLZPLATZgermany Release" allowfullscreen></iframe>
+                </div>
+                <h3 style="font-size: 1rem; margin-top: 0.5rem;">NEUE SOUND SESSION</h3>
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;">Aktuelles Underground Video & Release.</p>
+                <a href="https://www.youtube.com/watch?v=BHvLqOFx-3o" target="_blank" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%;">Auf YouTube ansehen</a>
+            </div>
+
+            <div class="card" style="padding: 1.5rem;">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/x7P8Kv5vcOg" title="BOLZPLATZgermany Live" allowfullscreen></iframe>
+                </div>
+                <h3 style="font-size: 1rem; margin-top: 0.5rem;">BOLZPLATZGERMANY</h3>
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;">Live Cast & Sound Session.</p>
+                <a href="https://www.youtube.com/watch?v=x7P8Kv5vcOg" target="_blank" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%;">Auf YouTube ansehen</a>
+            </div>
+
+            <div class="card" style="padding: 1.5rem;">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/m0GAsVON2uQ" title="BOLZPLATZrecordings mario vs boot" allowfullscreen></iframe>
+                </div>
+                <h3 style="font-size: 1rem; margin-top: 0.5rem;">MARIO VS BOOT</h3>
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;">BOLZPLATZrecordings Release Track.</p>
+                <a href="https://www.youtube.com/watch?v=m0GAsVON2uQ" target="_blank" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%;">Auf YouTube ansehen</a>
+            </div>
+
+            <div class="card" style="padding: 1.5rem;">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/db44Glt2s_c" title="m.blank at BOLZPLATZgermany" allowfullscreen></iframe>
+                </div>
+                <h3 style="font-size: 1rem; margin-top: 0.5rem;">M.BLANK SET</h3>
+                <p style="font-size: 0.85rem; margin-bottom: 1rem;">Live at BOLZPLATZgermany.</p>
+                <a href="https://www.youtube.com/watch?v=db44Glt2s_c" target="_blank" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.5rem 1rem; width: 100%;">Auf YouTube ansehen</a>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center;">
+            <a href="https://www.youtube.com/@bolzplatzgermany7996" target="_blank" class="btn btn-primary">Offiziellen YouTube Kanal öffnen</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>// KONTAKT & ORDERS</h2>
+            <p>Direkter Draht für Apparel & Booking</p>
+        </div>
+        <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center; background: var(--panel-bg);">
+            <div class="card-tag">DIRECT INQUIRIES</div>
+            <h3>Mario Schirra</h3>
+            <p>Für Kleidungsbestellungen, Größenberatung, Booking-Anfragen und Kollaborationen:</p>
+            <a href="mailto:mario.schirra@proton.me" class="btn btn-primary" style="margin-top: 1rem; display: block;">mario.schirra@proton.me</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            © 2026 BOLZPLATZgermany // BOLZwear. All Rights Reserved.
+        </div>
+        <div>
+            Contact: <a href="mailto:mario.schirra@proton.me" style="color: var(--text-muted); text-decoration: none;">mario.schirra@proton.me</a>
+        </div>
+    </footer>
+
+</body>
+</html>
