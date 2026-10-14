@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOLZPLATZgermany // BOLZwear</title>
+    <meta
+      name="description"
+      content="BOLZPLATZgermany — streetwear, music, and underground culture from Germany."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&family=Inter:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #070707;
+        --bg-alt: #101010;
+        --panel: #151515;
+        --panel-strong: #1d1d1d;
+        --line: rgba(255,255,255,0.08);
+        --text: #f4f4f4;
+        --muted: #9e9e9e;
+        --accent: #e50914;
+        --accent-soft: rgba(229, 9, 20, 0.12);
+        --shadow: rgba(0, 0, 0, 0.45);
+        --max-width: 1200px;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .eyebrow {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.76rem;
+        letter-spacing: 0.24rem;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(10px);
+        background: rgba(7, 7, 7, 0.88);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 76px;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+      }
+
+      .brand-mark {
+        width: 14px;
+        height: 14px;
+        background: linear-gradient(135deg, var(--accent), #8a0a12);
+        border-radius: 2px;
+        box-shadow: 0 0 18px rgba(229, 9, 20, 0.55);
+      }
+
+      .brand-name {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: 0.18rem;
+        text-transform: uppercase;
+      }
+
+      .brand-name span {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14rem;
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      .nav-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem 1rem;
+        border: 1px solid var(--line);
+        color: var(--text);
+        background: transparent;
+        font-family: 'Chakra Petch', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.14rem;
+        font-size: 0.72rem;
+      }
+
+      .hero {
+        padding: 4.5rem 0 4rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .hero-copy h1 {
+        margin: 1rem 0 1.25rem;
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: clamp(2.8rem, 6vw, 5.2rem);
+        line-height: 0.96;
+        text-transform: uppercase;
+        letter-spacing: -0.06em;
+      }
+
+      .hero-copy p {
+        max-width: 580px;
+        margin: 0 0 2rem;
+        color: var(--muted);
+        font-size: 1.06rem;
+      }
+
+      .cta-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.95rem 1.6rem;
+        border: 1px solid var(--line);
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.14rem;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--text);
+        color: var(--bg);
+        border-color: var(--text);
+      }
+
+      .btn-primary:hover {
+        background: transparent;
+        color: var(--text);
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--text);
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        color: var(--muted);
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.14rem;
+        text-transform: uppercase;
+      }
+
+      .meta-row strong {
+        color: var(--text);
+      }
+
+      .visual-shell {
+        position: relative;
+        background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+        border: 1px solid var(--line);
+        padding: 0.85rem;
+        box-shadow: 0 30px 80px var(--shadow);
+      }
+
+      .visual-shell::before {
+        content: "";
+        position: absolute;
+        inset: 12px 12px auto auto;
+        width: 90px;
+        height: 1px;
+        background: var(--accent);
+        box-shadow: 0 0 18px rgba(229, 9, 20, 0.8);
+      }
+
+      .visual-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+      }
+
+      .visual-tile {
+        min-height: 180px;
+        background-size: cover;
+        background-position: center;
+        border: 1px solid var(--line);
+      }
+
+      .tile-1 { background-image: url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80'); }
+      .tile-2 { background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80'); }
+      .tile-3 { background-image: url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80'); }
+      .tile-4 { background-image: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=80'); }
+
+      section {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .section-head h2 {
+        margin: 0.4rem 0 0;
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: clamp(1.8rem, 3vw, 3rem);
+        text-transform: uppercase;
+        letter-spacing: -0.04em;
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        max-width: 520px;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .info-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        padding: 1.5rem;
+        min-height: 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .info-card .tag {
+        font-family: 'Chakra Petch', sans-serif;
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        color: var(--accent);
+      }
+
+      .info-card h3 {
+        margin: 1rem 0 0.5rem;
+        font-family: 'Chakra Petch', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.06rem;
+        font-size: 1.3rem;
+      }
+
+      .info-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .product {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        overflow: hidden;
+      }
+
+      .product-image {
+        height: 280px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .product-body {
+        padding: 1.2rem 1.2rem 1.5rem;
+      }
+
+      .product-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .product-meta span {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .product-body h3 {
+        margin: 0.3rem 0 0.6rem;
+        font-family: 'Chakra Petch', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.06rem;
+      }
+
+      .product-price {
+        color: var(--text);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .product-1 { background-image: url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80'); }
+      .product-2 { background-image: url('https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=80'); }
+      .product-3 { background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80'); }
+
+      .split-panel {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .release-card {
+        background: linear-gradient(135deg, var(--panel), var(--panel-strong));
+        border: 1px solid var(--line);
+        padding: 2rem;
+      }
+
+      .release-card h3 {
+        margin: 0.8rem 0 1rem;
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: clamp(1.8rem, 3vw, 2.7rem);
+        text-transform: uppercase;
+        line-height: 1;
+      }
+
+      .release-card p {
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .release-image {
+        min-height: 420px;
+        background: url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        border: 1px solid var(--line);
+      }
+
+      footer {
+        padding: 2rem 0 3rem;
+      }
+
+      .footer-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        border-top: 1px solid var(--line);
+        padding-top: 1.5rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .split-panel,
+        .card-grid,
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+          padding: 1rem 0;
+        }
+
+        .section-head {
+          display: block;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .nav-links {
+          gap: 0.9rem;
+        }
+
+        .hero {
+          padding-top: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div class="brand-name">BOLZ<span>PLATZ</span>germany</div>
+        </div>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#shop">Shop</a>
+          <a href="#music">Music</a>
+          <a href="#culture">Culture</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#shop" class="nav-button">Drop 01</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Streetwear // Sound // Berlin energy</div>
+            <h1>BOLZPLATZgermany</h1>
+            <p>
+              Built for the underground. Clean silhouettes, sharp attitude, and a sound that feels
+              louder than the room.
+            </p>
+
+            <div class="cta-group">
+              <a class="btn btn-primary" href="#shop">Shop now</a>
+              <a class="btn btn-secondary" href="#music">Listen to the set</a>
+            </div>
+
+            <div class="meta-row">
+              <div><strong>18</strong> limited pieces</div>
+              <div><strong>01</strong> new capsule</div>
+              <div><strong>24/7</strong> culture feed</div>
+            </div>
+          </div>
+
+          <div class="visual-shell" aria-label="BOLZPLATZ campaign visuals">
+            <div class="visual-grid">
+              <div class="visual-tile tile-1" aria-hidden="true"></div>
+              <div class="visual-tile tile-2" aria-hidden="true"></div>
+              <div class="visual-tile tile-3" aria-hidden="true"></div>
+              <div class="visual-tile tile-4" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="shop">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Featured</div>
+              <h2>Latest drop</h2>
+            </div>
+            <p>Minimal layers with brutal edge — engineered for movement, night sessions, and unfiltered expression.</p>
+          </div>
+
+          <div class="product-grid">
+            <article class="product">
+              <div class="product-image product-1" aria-label="Black bomber jacket"></div>
+              <div class="product-body">
+                <div class="product-meta">
+                  <span>Capsule 01</span>
+                  <span>New</span>
+                </div>
+                <h3>Black Bomber</h3>
+                <div class="product-price">€129</div>
+              </div>
+            </article>
+
+            <article class="product">
+              <div class="product-image product-2" aria-label="Graphic T-shirt"></div>
+              <div class="product-body">
+                <div class="product-meta">
+                  <span>Core</span>
+                  <span>Limited</span>
+                </div>
+                <h3>Signal Tee</h3>
+                <div class="product-price">€59</div>
+              </div>
+            </article>
+
+            <article class="product">
+              <div class="product-image product-3" aria-label="Oversized hoodie"></div>
+              <div class="product-body">
+                <div class="product-meta">
+                  <span>Studio</span>
+                  <span>Hot</span>
+                </div>
+                <h3>Night Hoodie</h3>
+                <div class="product-price">€99</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="music">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Audio</div>
+              <h2>Sound system</h2>
+            </div>
+            <p>Heavy drums, blank-slate synths, and the same raw attitude that defines the brand.</p>
+          </div>
+
+          <div class="card-grid">
+            <article class="info-card">
+              <div>
+                <div class="tag">Live mix</div>
+                <h3>Night channel</h3>
+              </div>
+              <p>Low-end pressure and club-ready cuts made for street movement and late-night focus.</p>
+            </article>
+
+            <article class="info-card">
+              <div>
+                <div class="tag">Studio</div>
+                <h3>Signal ritual</h3>
+              </div>
+              <p>Minimal production, rebellious tone, and attitude with zero compromise in the mix.</p>
+            </article>
+
+            <article class="info-card">
+              <div>
+                <div class="tag">Archive</div>
+                <h3>Afterhours</h3>
+              </div>
+              <p>Selected records and unreleased cuts built around the same sharp visual identity.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="culture">
+        <div class="container split-panel">
+          <div class="release-card">
+            <div class="eyebrow">New release</div>
+            <h3>RLX // Echo</h3>
+            <p>
+              A new single built around cold percussion, distorted texture, and a vocal line made for midnight motion.
+            </p>
+            <a class="btn btn-primary" href="#contact">Listen now</a>
+          </div>
+
+          <div class="release-image" aria-label="Music release artwork"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="container footer-wrap">
+        <div>© 2026 BOLZPLATZgermany</div>
+        <div>shop // music // culture</div>
+      </div>
+    </footer>
+  </body>
+</html>
